@@ -1,0 +1,35 @@
+{
+  "name": "github-clone-backend",
+  "version": "1.0.0",
+  "description": "GitHub Clone - Advanced Version Control System API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js start",
+    "dev": "nodemon index.js start",
+    "init": "node index.js init",
+    "lint": "eslint ."
+  },
+  "keywords": ["github", "vcs", "git", "clone"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1657.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.3.1",
+    "express-validator": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.8.0",
+    "mongoose": "^8.5.0",
+    "multer": "^1.4.5-lts.1",
+    "socket.io": "^4.7.5",
+    "uuid": "^10.0.0",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}

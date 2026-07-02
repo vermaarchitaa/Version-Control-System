@@ -1,0 +1,114 @@
+.issue-detail-page { max-width: 900px; }
+
+.issue-header { margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--border-color); }
+
+.issue-title-h1 {
+  color: var(--text-primary);
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.issue-status-row { align-items: center; display: flex; flex-wrap: wrap; gap: 10px; }
+
+.issue-status-badge {
+  align-items: center;
+  border-radius: 20px;
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 600;
+  gap: 5px;
+  padding: 4px 14px;
+}
+.issue-status-badge.open { background: rgba(63,185,80,0.2); color: #3fb950; }
+.issue-status-badge.closed { background: rgba(139,72,230,0.2); color: #bc8cff; }
+
+.issue-subtitle { color: var(--text-muted); font-size: 14px; }
+
+/* Timeline */
+.issue-timeline { display: flex; flex-direction: column; gap: 16px; margin-bottom: 16px; }
+
+.timeline-item { align-items: flex-start; display: flex; gap: 14px; }
+.timeline-item .avatar { background: var(--bg-hover); flex-shrink: 0; margin-top: 2px; }
+
+.comment-box {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  flex: 1;
+  overflow: hidden;
+}
+
+.comment-header {
+  align-items: center;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  gap: 8px;
+  padding: 8px 14px;
+}
+
+.comment-header strong { color: var(--text-primary); font-size: 14px; }
+.comment-time { color: var(--text-muted); font-size: 12px; }
+.comment-author-badge {
+  background: rgba(88,166,255,0.1);
+  border: 1px solid rgba(88,166,255,0.3);
+  border-radius: 20px;
+  color: var(--accent-blue);
+  font-size: 11px;
+  padding: 1px 7px;
+}
+
+.comment-delete-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  margin-left: auto;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+.comment-delete-btn:hover { background: rgba(248,81,73,0.15); color: var(--accent-red); }
+
+.comment-body {
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 14px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Add comment */
+.issue-actions-row {
+  border-top: 1px solid var(--border-color);
+  margin-bottom: 16px;
+  padding-top: 16px;
+}
+
+.add-comment-section { align-items: flex-start; display: flex; gap: 14px; }
+.add-comment-section .avatar { background: var(--bg-hover); margin-top: 2px; }
+
+.comment-form { display: flex; flex: 1; flex-direction: column; gap: 10px; }
+.comment-form textarea {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 14px;
+  padding: 12px;
+}
+.comment-form textarea:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px rgba(88,166,255,0.15);
+  outline: none;
+}
+
+.label-pill-small {
+  border: 1px solid;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 8px;
+}

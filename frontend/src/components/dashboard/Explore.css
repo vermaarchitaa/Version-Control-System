@@ -1,0 +1,136 @@
+.explore-page {
+  padding: 32px 16px 64px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.explore-header {
+  margin-bottom: 24px;
+}
+
+.explore-header h1 {
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.explore-header p {
+  color: var(--text-secondary);
+  font-size: 15px;
+}
+
+/* Search form */
+.explore-search-form {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.explore-search-input-wrapper {
+  position: relative;
+  flex: 1;
+  min-width: 220px;
+}
+
+.explore-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+  pointer-events: none;
+}
+
+.explore-search-input {
+  width: 100%;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-primary);
+  font-size: 14px;
+  padding: 8px 12px 8px 38px;
+  transition: border-color 0.15s;
+}
+
+.explore-search-input:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.15);
+  outline: none;
+}
+
+.explore-filter-select {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-primary);
+  cursor: pointer;
+  font-size: 13px;
+  padding: 8px 12px;
+}
+
+.explore-filter-select:focus {
+  border-color: var(--accent-blue);
+  outline: none;
+}
+
+/* Results */
+.explore-results-header {
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.results-count {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.explore-repo-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Skeleton loaders */
+.loading-repos {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.repo-skeleton {
+  height: 92px;
+  background: linear-gradient(
+    90deg,
+    var(--bg-secondary) 25%,
+    var(--bg-tertiary) 50%,
+    var(--bg-secondary) 75%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 1.4s ease infinite;
+  border-bottom: 1px solid var(--border-color);
+  border-radius: 4px;
+  margin-bottom: 4px;
+}
+
+@keyframes shimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.page-indicator {
+  color: var(--text-secondary);
+  font-size: 14px;
+}

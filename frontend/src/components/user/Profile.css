@@ -1,0 +1,101 @@
+.profile-layout {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: 260px 1fr;
+}
+
+@media (max-width: 768px) {
+  .profile-layout { grid-template-columns: 1fr; }
+}
+
+/* Sidebar */
+.profile-sidebar { padding-top: 20px; }
+
+.profile-avatar-wrapper { margin-bottom: 14px; }
+
+.profile-avatar {
+  background: rgba(88,166,255,0.2);
+  border: 2px solid var(--border-color);
+  color: var(--accent-blue);
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.profile-username { color: var(--text-primary); font-size: 22px; font-weight: 600; margin-bottom: 4px; }
+.profile-bio { color: var(--text-secondary); font-size: 14px; line-height: 1.5; margin-bottom: 14px; }
+
+.profile-stats {
+  align-items: center;
+  color: var(--text-secondary);
+  display: flex;
+  font-size: 13px;
+  gap: 6px;
+  margin: 14px 0 10px;
+}
+.profile-stats strong { color: var(--text-primary); }
+
+.profile-info-item {
+  align-items: center;
+  color: var(--text-secondary);
+  display: flex;
+  font-size: 14px;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+.profile-info-item a { color: var(--accent-blue); }
+
+.edit-form {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding: 14px;
+}
+.edit-form label { color: var(--text-primary); font-size: 13px; font-weight: 600; }
+
+/* Main */
+.profile-main { min-width: 0; padding-top: 20px; }
+
+.profile-tabs {
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.profile-tab {
+  align-items: center;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex;
+  font-size: 14px;
+  gap: 6px;
+  padding: 10px 16px;
+}
+.profile-tab:hover { color: var(--text-primary); }
+.profile-tab.active {
+  border-bottom-color: var(--accent-orange);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Heatmap */
+.heatmap-section { margin-bottom: 20px; }
+
+.heatmap-header {
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+}
+
+.heatmap-title { color: var(--text-secondary); font-size: 14px; }
+.heatmap-title strong { color: var(--text-primary); }
+
+.heatmap-wrapper { overflow-x: auto; }
+
+.repo-list { display: flex; flex-direction: column; gap: 12px; }

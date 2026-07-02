@@ -1,0 +1,327 @@
+/* ── Global Reset & Variables ─────────────────────────────────────────── */
+:root {
+  --bg-primary: #0d1117;
+  --bg-secondary: #161b22;
+  --bg-tertiary: #21262d;
+  --bg-hover: #30363d;
+  --border-color: #30363d;
+  --border-muted: #21262d;
+  --text-primary: #e6edf3;
+  --text-secondary: #8b949e;
+  --text-muted: #6e7681;
+  --accent-blue: #58a6ff;
+  --accent-green: #3fb950;
+  --accent-red: #f85149;
+  --accent-orange: #d29922;
+  --accent-purple: #bc8cff;
+  --btn-primary-bg: #238636;
+  --btn-primary-hover: #2ea043;
+  --btn-danger-bg: #da3633;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.5);
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--accent-blue);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+input, textarea, select {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 14px;
+  outline: none;
+  padding: 6px 12px;
+  transition: border-color 0.15s;
+  width: 100%;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px rgba(88,166,255,0.15);
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+/* ── Utility Classes ──────────────────────────────────────────────────── */
+.btn {
+  align-items: center;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  font-size: 14px;
+  font-weight: 500;
+  gap: 6px;
+  padding: 5px 16px;
+  transition: background 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--btn-primary-bg);
+  border-color: rgba(240,246,252,0.1);
+  color: #fff;
+}
+.btn-primary:hover { background: var(--btn-primary-hover); }
+
+.btn-secondary {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+.btn-secondary:hover { background: var(--bg-hover); }
+
+.btn-danger {
+  background: var(--btn-danger-bg);
+  border-color: transparent;
+  color: #fff;
+}
+.btn-danger:hover { background: #b91c1c; }
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-primary);
+}
+.btn-outline:hover { background: var(--bg-hover); }
+
+.btn-sm { font-size: 12px; padding: 3px 10px; }
+.btn-lg { font-size: 16px; padding: 10px 20px; }
+
+.badge {
+  background: var(--bg-hover);
+  border-radius: 20px;
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 1px 8px;
+}
+.badge-green { background: rgba(63,185,80,0.2); color: var(--accent-green); }
+.badge-red { background: rgba(248,81,73,0.2); color: var(--accent-red); }
+.badge-blue { background: rgba(88,166,255,0.15); color: var(--accent-blue); }
+.badge-purple { background: rgba(188,140,255,0.15); color: var(--accent-purple); }
+
+.card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 16px 0;
+}
+
+.avatar {
+  background: var(--bg-hover);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: var(--text-primary);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.avatar img { width: 100%; height: 100%; object-fit: cover; }
+.avatar-sm { width: 24px; height: 24px; font-size: 11px; }
+.avatar-md { width: 36px; height: 36px; font-size: 14px; }
+.avatar-lg { width: 64px; height: 64px; font-size: 22px; }
+.avatar-xl { width: 96px; height: 96px; font-size: 32px; }
+
+.loading-screen {
+  align-items: center;
+  color: var(--text-secondary);
+  display: flex;
+  font-size: 16px;
+  height: 100vh;
+  justify-content: center;
+}
+
+.spinner {
+  animation: spin 0.8s linear infinite;
+  border: 3px solid var(--border-color);
+  border-top-color: var(--accent-blue);
+  border-radius: 50%;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.empty-state {
+  color: var(--text-muted);
+  padding: 48px;
+  text-align: center;
+}
+.empty-state h3 { color: var(--text-secondary); font-size: 18px; margin-bottom: 8px; }
+.empty-state p { font-size: 14px; margin-bottom: 16px; }
+
+.error-message {
+  background: rgba(248,81,73,0.1);
+  border: 1px solid rgba(248,81,73,0.3);
+  border-radius: var(--radius-sm);
+  color: var(--accent-red);
+  font-size: 14px;
+  padding: 10px 14px;
+}
+
+.success-message {
+  background: rgba(63,185,80,0.1);
+  border: 1px solid rgba(63,185,80,0.3);
+  border-radius: var(--radius-sm);
+  color: var(--accent-green);
+  font-size: 14px;
+  padding: 10px 14px;
+}
+
+.page-container {
+  margin: 0 auto;
+  max-width: 1280px;
+  padding: 24px 16px;
+}
+
+/* Language color dots */
+.lang-dot {
+  border-radius: 50%;
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+}
+
+/* ── Profile page layout (used in both Profile + UserPublicProfile) ─────── */
+.profile-page {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: 260px 1fr;
+  padding: 24px 16px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .profile-page { grid-template-columns: 1fr; }
+}
+
+.profile-sidebar { padding-top: 20px; }
+
+.profile-username { color: var(--text-primary); font-size: 22px; font-weight: 600; margin-bottom: 4px; }
+.profile-bio { color: var(--text-secondary); font-size: 14px; line-height: 1.5; margin-bottom: 14px; }
+
+.profile-follow-btn {
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 14px;
+  margin-top: 12px;
+}
+
+.profile-stats {
+  align-items: center;
+  color: var(--text-secondary);
+  display: flex;
+  font-size: 13px;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0;
+}
+.profile-stats strong { color: var(--text-primary); }
+.stat-label { color: var(--text-secondary); }
+.stat-dot { color: var(--text-muted); }
+
+.profile-meta-item {
+  align-items: center;
+  color: var(--text-secondary);
+  display: flex;
+  font-size: 14px;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+.profile-meta-item a { color: var(--accent-blue); }
+
+.profile-main { min-width: 0; padding-top: 20px; }
+
+.profile-tabs {
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.heatmap-container {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  margin-bottom: 20px;
+  overflow-x: auto;
+  padding: 16px;
+}
+
+.heatmap-title {
+  color: var(--text-secondary);
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.profile-repos { display: flex; flex-direction: column; gap: 12px; }
+
+/* ── avatar-xl override ──────────────────────────────────────────── */
+.avatar-xl {
+  width: 260px !important;
+  height: 260px !important;
+  font-size: 80px !important;
+  border-radius: 50% !important;
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+/* ── form inputs global (for pages not using form-group) ─────────── */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="url"],
+select,
+textarea {
+  width: 100%;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 14px;
+  padding: 8px 12px;
+  transition: border-color 0.15s;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px rgba(88,166,255,0.15);
+  outline: none;
+}
+input::placeholder, textarea::placeholder { color: var(--text-muted); }
