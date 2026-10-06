@@ -12,6 +12,15 @@ import Issues from "./components/issues/Issues";
 import IssueDetail from "./components/issues/IssueDetail";
 import Explore from "./components/dashboard/Explore";
 import UserPublicProfile from "./components/user/UserPublicProfile";
+import Landing from "./components/landing/Landing";
+
+const PUBLIC_PATHS = ["/", "/auth", "/signup", "/explore"];
+
+const HomePage = () => {
+  const { currentUser, loading } = useAuth();
+  if (loading) return <div className="loading-screen">Loading...</div>;
+  return currentUser ? <Dashboard /> : <Landing />;
+};
 
 const ProtectedRoute = ({ element }) => {
   const { currentUser, loading } = useAuth();
@@ -39,7 +48,7 @@ const ProjectRoutes = () => {
     if (
       !loading &&
       !userId &&
-      !["/auth", "/signup", "/explore"].includes(window.location.pathname)
+      !PUBLIC_PATHS.includes(window.location.pathname)
     ) {
       navigate("/auth");
     }
@@ -49,7 +58,7 @@ const ProjectRoutes = () => {
   }, [currentUser, navigate, setCurrentUser, loading]);
 
   const routes = useRoutes([
-    { path: "/", element: <ProtectedRoute element={<Dashboard />} /> },
+    { path: "/", element: <HomePage /> },
     { path: "/auth", element: <Login /> },
     { path: "/signup", element: <Signup /> },
     { path: "/profile", element: <ProtectedRoute element={<Profile />} /> },

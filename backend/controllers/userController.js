@@ -42,8 +42,11 @@ async function signup(req, res) {
     newUser.contributions.set(today, (newUser.contributions.get(today) || 0) + 1);
     await newUser.save();
 
-    const token = generateToken(newUser);
-    res.status(201).json({ token, userId: newUser._id, username: newUser.username });
+    res.status(201).json({
+      message: "Account created successfully.",
+      userId: newUser._id,
+      username: newUser.username,
+    });
   } catch (err) {
     console.error("Signup error:", err.message);
     res.status(500).json({ error: "Server error during signup." });

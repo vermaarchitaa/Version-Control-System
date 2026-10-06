@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { MarkGithubIcon } from "@primer/octicons-react";
-import { useAuth } from "../../context/authContext";
 import api from "../../utils/api";
 import "./auth.css";
 
@@ -11,7 +10,6 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const { login } = useAuth();
   const navigate = useNavigate();
 
   const handleSignup = async (e) => {
@@ -37,9 +35,8 @@ const Signup = () => {
 
     try {
       setLoading(true);
-      const res = await api.post("/signup", { username, email, password });
-      login(res.data);
-      navigate("/");
+      await api.post("/signup", { username, email, password });
+      navigate("/auth", { state: { signupSuccess: true } });
     } catch (err) {
       setError(
         err.response?.data?.error ||

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { MarkGithubIcon } from "@primer/octicons-react";
 import { useAuth } from "../../context/authContext";
 import api from "../../utils/api";
@@ -12,6 +12,8 @@ const Login = () => {
   const [error, setError] = useState("");
   const { login } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+  const signupSuccess = Boolean(location.state?.signupSuccess);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -48,6 +50,11 @@ const Login = () => {
         <h1 className="auth-title">Sign in to GitHub Clone</h1>
 
         <div className="auth-box">
+          {signupSuccess && (
+            <div className="success-message" style={{ marginBottom: 16 }}>
+              Account created successfully. Please sign in.
+            </div>
+          )}
           {error && <div className="error-message" style={{ marginBottom: 16 }}>{error}</div>}
 
           <form onSubmit={handleLogin} className="auth-form">
