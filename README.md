@@ -1,4 +1,4 @@
-# GitHub Clone — Advanced Version Control System
+# Version Control System
 
 A full-stack GitHub-inspired version control platform built with **React**, **Node.js**, **Express**, **MongoDB**, and **Socket.IO**.
 
