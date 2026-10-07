@@ -63,7 +63,7 @@ function startServer() {
   app.use(cors({ origin: allowedOrigins, credentials: true }));
 
   mongoose
-    .connect(process.env.MONGODB_URI)
+    .connect(process.env.MONGODB_URI, { family: 4 })
     .then(() => console.log("✅ MongoDB connected!"))
     .catch((err) => {
       console.error("❌ MongoDB error:", err);

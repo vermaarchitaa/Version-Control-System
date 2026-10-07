@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/authContext";
 import {
-  MarkGithubIcon,
   SearchIcon,
   BellIcon,
   PlusIcon,
   TriangleDownIcon,
 } from "@primer/octicons-react";
+import BrandMark from "./BrandMark";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -35,12 +35,11 @@ const Navbar = () => {
   return (
     <header className="navbar">
       <div className="navbar-inner">
-        {/* Left */}
-        <div className="navbar-left">
-          <Link to="/" className="navbar-logo" aria-label="GitHub Clone Home">
-            <MarkGithubIcon size={36} />
-          </Link>
+        <div className="navbar-brand">
+          <BrandMark />
+        </div>
 
+        <div className="navbar-center">
           <form className="navbar-search" onSubmit={handleSearch}>
             <SearchIcon size={16} className="search-icon" />
             <input
@@ -57,7 +56,6 @@ const Navbar = () => {
           </nav>
         </div>
 
-        {/* Right */}
         <div className="navbar-right">
           {currentUser ? (
             <>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { MarkGithubIcon } from "@primer/octicons-react";
+import BrandMark from "../shared/BrandMark";
 import api from "../../utils/api";
 import "./auth.css";
 
@@ -52,7 +52,7 @@ const Signup = () => {
     <div className="auth-page">
       <div className="auth-container">
         <div className="auth-logo">
-          <MarkGithubIcon size={48} />
+          <BrandMark />
         </div>
 
         <h1 className="auth-title">Create your account</h1>

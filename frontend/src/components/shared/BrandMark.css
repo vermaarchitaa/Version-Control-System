@@ -1,0 +1,33 @@
+.brand-mark {
+  align-items: center;
+  color: var(--text-primary);
+  display: inline-flex;
+  flex-shrink: 0;
+  gap: 10px;
+  text-decoration: none;
+}
+.brand-mark:hover {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.brand-mark-icon {
+  align-items: center;
+  color: var(--accent-blue);
+  display: inline-flex;
+  flex-shrink: 0;
+  height: 24px;
+  width: 24px;
+}
+.brand-mark-icon svg {
+  display: block;
+  height: 24px;
+  width: 24px;
+}
+
+.brand-mark-name {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}

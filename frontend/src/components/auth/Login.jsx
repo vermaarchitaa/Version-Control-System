@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { MarkGithubIcon } from "@primer/octicons-react";
 import { useAuth } from "../../context/authContext";
+import BrandMark from "../shared/BrandMark";
 import api from "../../utils/api";
 import "./auth.css";
 
@@ -44,10 +44,10 @@ const Login = () => {
     <div className="auth-page">
       <div className="auth-container">
         <div className="auth-logo">
-          <MarkGithubIcon size={48} />
+          <BrandMark />
         </div>
 
-        <h1 className="auth-title">Sign in to GitHub Clone</h1>
+        <h1 className="auth-title">Sign in to CodeForge</h1>
 
         <div className="auth-box">
           {signupSuccess && (
@@ -96,7 +96,7 @@ const Login = () => {
         </div>
 
         <div className="auth-footer-box">
-          New to GitHub Clone?{" "}
+          New to CodeForge?{" "}
           <Link to="/signup">Create an account</Link>
         </div>
       </div>

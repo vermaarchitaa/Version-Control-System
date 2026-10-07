@@ -140,19 +140,9 @@ html:has(.landing) {
   width: 100%;
 }
 
-.landing-brand {
-  align-items: center;
-  color: var(--text-primary);
-  display: inline-flex;
-  flex-shrink: 0;
-  gap: 10px;
+.landing-nav .brand-mark {
   justify-self: start;
   margin-right: auto;
-  text-decoration: none;
-}
-.landing-brand:hover {
-  color: var(--text-primary);
-  text-decoration: none;
 }
 
 .landing-brand-mark {
@@ -160,20 +150,6 @@ html:has(.landing) {
   display: inline-flex;
   align-items: center;
   flex-shrink: 0;
-  height: 24px;
-  width: 24px;
-}
-.landing-brand-mark svg {
-  display: block;
-  height: 24px;
-  width: 24px;
-}
-
-.landing-brand-name {
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1;
 }
 
 .landing-nav-links {
