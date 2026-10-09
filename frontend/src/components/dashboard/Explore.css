@@ -9,10 +9,11 @@
 }
 
 .explore-header h1 {
-  font-size: 26px;
-  font-weight: 600;
+  font-size: 28px;
+  font-weight: 650;
   color: var(--text-primary);
-  margin-bottom: 4px;
+  letter-spacing: -0.03em;
+  margin-bottom: 6px;
 }
 
 .explore-header p {
@@ -44,15 +45,15 @@
   pointer-events: none;
 }
 
-.explore-search-input {
+.explore-search-input[type="text"] {
   width: 100%;
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
   border-radius: 6px;
   color: var(--text-primary);
   font-size: 14px;
-  padding: 8px 12px 8px 38px;
-  transition: border-color 0.15s;
+  padding: 8px 12px 8px 42px;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
 }
 
 .explore-search-input:focus {
@@ -91,7 +92,7 @@
 .explore-repo-grid {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 12px;
 }
 
 /* Skeleton loaders */

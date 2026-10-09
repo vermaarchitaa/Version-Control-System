@@ -1,0 +1,105 @@
+/* Authenticated shell — does not apply on the landing page */
+
+:root {
+  --surface-elevated: rgba(22, 27, 34, 0.92);
+  --focus-ring: 0 0 0 3px rgba(88, 166, 255, 0.15);
+  --glow-blue: 0 8px 24px rgba(0, 0, 0, 0.28);
+}
+
+html:has(.navbar) body {
+  background-color: var(--bg-primary);
+  background-attachment: fixed;
+  background-image:
+    radial-gradient(ellipse 90% 46% at 50% -18%, rgba(88, 166, 255, 0.07), transparent 58%),
+    radial-gradient(ellipse 42% 28% at 100% 0%, rgba(188, 140, 255, 0.045), transparent 52%);
+}
+
+body:has(.navbar) .btn {
+  transition: background 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+body:has(.navbar) .btn-primary:hover {
+  box-shadow: 0 0 0 1px rgba(63, 185, 80, 0.18), 0 6px 16px rgba(35, 134, 54, 0.22);
+}
+body:has(.navbar) .btn-secondary {
+  background: var(--bg-secondary);
+  border-color: var(--border-color);
+}
+body:has(.navbar) .btn-secondary:hover {
+  background: var(--bg-hover);
+  border-color: var(--text-muted);
+}
+
+body:has(.navbar) .badge {
+  border: 1px solid transparent;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+body:has(.navbar) .badge-blue {
+  background: rgba(88, 166, 255, 0.12);
+  border-color: rgba(88, 166, 255, 0.22);
+}
+body:has(.navbar) .badge-red {
+  background: rgba(248, 81, 73, 0.12);
+  border-color: rgba(248, 81, 73, 0.22);
+}
+
+body:has(.navbar) .card {
+  background: var(--surface-elevated);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.03) inset;
+}
+
+.empty-state {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 48px 24px;
+}
+.empty-state > svg,
+.empty-state-icon {
+  background: rgba(88, 166, 255, 0.08);
+  border: 1px solid rgba(88, 166, 255, 0.18);
+  border-radius: var(--radius-md);
+  color: var(--accent-blue);
+  display: inline-flex;
+  margin-bottom: 14px;
+  padding: 12px;
+}
+.empty-state h3 {
+  color: var(--text-primary);
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.empty-state p {
+  color: var(--text-secondary);
+  margin: 0 auto 16px;
+  max-width: 28rem;
+}
+
+.tab-count {
+  background: var(--bg-hover);
+  border-radius: 10px;
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 0 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:has(.navbar) body,
+  body:has(.navbar) .btn,
+  .repo-card,
+  .filter-tab,
+  .file-tree-row,
+  .repo-tab,
+  .profile-tab,
+  .suggested-item,
+  .issue-row,
+  .commit-item {
+    animation: none !important;
+    transition: none !important;
+  }
+  .repo-card:hover {
+    transform: none !important;
+  }
+}

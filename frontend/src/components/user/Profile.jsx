@@ -232,7 +232,9 @@ const Profile = () => {
             <div>
               {repos.length === 0 ? (
                 <div className="empty-state">
-                  <RepoIcon size={32} />
+                  <span className="empty-state-icon" aria-hidden="true">
+                    <RepoIcon size={28} />
+                  </span>
                   <h3>No repositories yet</h3>
                   <p>Start building something awesome.</p>
                   <Link to="/new" className="btn btn-primary">New repository</Link>
@@ -252,7 +254,9 @@ const Profile = () => {
             <div>
               {(!user?.starredRepos || user.starredRepos.length === 0) ? (
                 <div className="empty-state">
-                  <StarIcon size={32} />
+                  <span className="empty-state-icon" aria-hidden="true">
+                    <StarIcon size={28} />
+                  </span>
                   <h3>No starred repositories</h3>
                   <p>Star repositories you want to keep an eye on.</p>
                 </div>

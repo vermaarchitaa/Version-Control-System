@@ -5,6 +5,7 @@ import { ThemeProvider, BaseStyles } from "@primer/react";
 import App from "./App";
 import { AuthProvider } from "./context/authContext";
 import "./styles/global.css";
+import "./styles/app-shell.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

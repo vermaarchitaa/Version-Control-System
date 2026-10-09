@@ -38,7 +38,11 @@
   padding: 4px 10px;
 }
 .issue-filter-tab:hover { color: var(--text-primary); }
-.issue-filter-tab.active { color: var(--text-primary); font-weight: 700; }
+.issue-filter-tab.active {
+  background: rgba(88, 166, 255, 0.1);
+  color: var(--accent-blue);
+  font-weight: 700;
+}
 
 .issues-list {
   border: 1px solid var(--border-color);
@@ -49,12 +53,12 @@
 
 .issue-row {
   align-items: flex-start;
-  background: var(--bg-primary);
+  background: rgba(13, 17, 23, 0.45);
   border-bottom: 1px solid var(--border-muted);
   display: flex;
   gap: 12px;
   padding: 12px 16px;
-  transition: background 0.1s;
+  transition: background 0.15s ease;
 }
 .issue-row:last-child { border-bottom: none; }
 .issue-row:hover { background: var(--bg-secondary); }

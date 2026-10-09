@@ -100,7 +100,7 @@ const UserPublicProfile = () => {
         <div className="profile-page page-container">
           <div className="empty-state">
             <h2>User not found</h2>
-            <p>@{username} does not exist on GitHub Clone.</p>
+            <p>@{username} does not exist on CodeForge.</p>
             <Link to="/explore" className="btn btn-secondary" style={{ marginTop: 16 }}>
               Explore Repositories
             </Link>
@@ -228,7 +228,9 @@ const UserPublicProfile = () => {
             <div className="profile-repos">
               {repos.length === 0 ? (
                 <div className="empty-state">
-                  <RepoIcon size={32} />
+                  <span className="empty-state-icon" aria-hidden="true">
+                    <RepoIcon size={28} />
+                  </span>
                   <h3>{user.username} has no public repositories yet.</h3>
                 </div>
               ) : (

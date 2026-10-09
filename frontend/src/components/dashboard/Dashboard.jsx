@@ -126,7 +126,9 @@ const Dashboard = () => {
             </div>
           ) : filtered.length === 0 ? (
             <div className="empty-state">
-              <RepoIcon size={32} />
+              <span className="empty-state-icon" aria-hidden="true">
+                <RepoIcon size={28} />
+              </span>
               <h3>
                 {searchQuery
                   ? `No repositories matching "${searchQuery}"`
@@ -135,7 +137,7 @@ const Dashboard = () => {
               <p>
                 {searchQuery
                   ? "Try a different search term."
-                  : "Get started by creating a new repository."}
+                  : "Start building something awesome."}
               </p>
               {!searchQuery && (
                 <Link to="/new" className="btn btn-primary">

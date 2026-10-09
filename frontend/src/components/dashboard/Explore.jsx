@@ -115,7 +115,9 @@ const Explore = () => {
           </div>
         ) : repos.length === 0 ? (
           <div className="empty-state">
-            <RepoIcon size={32} />
+            <span className="empty-state-icon" aria-hidden="true">
+              <RepoIcon size={28} />
+            </span>
             <h3>No repositories found</h3>
             <p>Try adjusting your search or filters.</p>
           </div>

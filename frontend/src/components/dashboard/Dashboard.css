@@ -16,10 +16,14 @@
 
 .sidebar-user {
   align-items: center;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin-bottom: 20px;
+  padding: 16px 12px;
 }
 
 .sidebar-username {
@@ -52,7 +56,7 @@
   text-decoration: none;
 }
 .sidebar-nav-item.active {
-  background: var(--bg-hover);
+  background: rgba(88, 166, 255, 0.1);
   color: var(--text-primary);
   font-weight: 600;
 }
@@ -82,7 +86,7 @@
 
 .search-icon-inline {
   color: var(--text-muted);
-  left: 10px;
+  left: 12px;
   pointer-events: none;
   position: absolute;
   top: 50%;
@@ -90,7 +94,9 @@
 }
 
 .repo-search-input {
-  padding-left: 34px !important;
+  background: var(--bg-secondary) !important;
+  padding-left: 40px !important;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
 }
 
 .filter-tabs {
@@ -99,21 +105,27 @@
 }
 
 .filter-tab {
-  background: var(--bg-tertiary);
+  background: var(--bg-secondary);
   border: 1px solid var(--border-color);
   color: var(--text-secondary);
   font-size: 13px;
-  padding: 4px 12px;
+  padding: 5px 12px;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
 .filter-tab:first-child { border-radius: 6px 0 0 6px; }
 .filter-tab:last-child { border-radius: 0 6px 6px 0; }
 .filter-tab + .filter-tab { border-left: none; }
 .filter-tab.active {
-  background: var(--accent-blue);
-  border-color: var(--accent-blue);
-  color: #fff;
+  background: rgba(88, 166, 255, 0.12);
+  border-color: rgba(88, 166, 255, 0.38);
+  box-shadow: inset 0 0 0 1px rgba(88, 166, 255, 0.08);
+  color: var(--accent-blue);
+  font-weight: 600;
 }
-.filter-tab:hover:not(.active) { background: var(--bg-hover); }
+.filter-tab:hover:not(.active) {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
 
 .repo-list {
   display: flex;
@@ -174,9 +186,12 @@
   display: flex;
   gap: 8px;
   padding: 8px 10px;
-  transition: border-color 0.15s;
+  transition: border-color 0.18s ease, transform 0.18s ease;
 }
-.suggested-item:hover { border-color: var(--accent-blue); }
+.suggested-item:hover {
+  border-color: rgba(88, 166, 255, 0.42);
+  transform: translateY(-1px);
+}
 
 .suggested-name {
   color: var(--accent-blue);

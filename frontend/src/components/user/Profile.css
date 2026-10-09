@@ -14,8 +14,9 @@
 .profile-avatar-wrapper { margin-bottom: 14px; }
 
 .profile-avatar {
-  background: rgba(88,166,255,0.2);
-  border: 2px solid var(--border-color);
+  background: rgba(88,166,255,0.16);
+  border: 1px solid rgba(88, 166, 255, 0.28);
+  box-shadow: 0 0 0 6px rgba(88, 166, 255, 0.06);
   color: var(--accent-blue);
   font-size: 36px;
   font-weight: 700;
@@ -76,16 +77,20 @@
   font-size: 14px;
   gap: 6px;
   padding: 10px 16px;
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
 .profile-tab:hover { color: var(--text-primary); }
 .profile-tab.active {
-  border-bottom-color: var(--accent-orange);
+  border-bottom-color: var(--accent-blue);
   color: var(--text-primary);
   font-weight: 600;
 }
 
 /* Heatmap */
-.heatmap-section { margin-bottom: 20px; }
+.heatmap-section {
+  margin-bottom: 20px;
+  padding: 16px;
+}
 
 .heatmap-header {
   border-bottom: 1px solid var(--border-color);
