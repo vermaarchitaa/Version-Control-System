@@ -11,6 +11,7 @@ import Navbar from "../shared/Navbar";
 import RepoCard from "../shared/RepoCard";
 import { useAuth } from "../../context/authContext";
 import api from "../../utils/api";
+import { resolveMediaUrl } from "../../config/apiConfig";
 import "../user/Profile.css";
 import "../shared/RepoCard.css";
 
@@ -119,7 +120,7 @@ const UserPublicProfile = () => {
           {/* Avatar */}
           <div className="profile-avatar-wrapper">
             {user?.avatarUrl ? (
-              <img src={user.avatarUrl} alt={user.username} className="avatar-xl" />
+              <img src={resolveMediaUrl(user.avatarUrl)} alt={user.username} className="avatar-xl" />
             ) : (
               <div className="avatar-xl" style={{
                 background: "linear-gradient(135deg, #388bfd22, #bc8cff22)",
